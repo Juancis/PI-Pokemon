@@ -1,0 +1,109 @@
+.landing{
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    background-image: url('https://nerdmacia.cl/wp-content/uploads/2016/08/Pokemon-Go-Wallpaper-Funny.jpg');
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover; 
+    background-position: center;
+}
+
+
+.landingButton{
+    text-decoration: none;
+    box-sizing: content-box;
+    margin-bottom: 100px;
+
+}
+
+.homehome {
+  font-family: 'Pokemon Solid', sans-serif;
+  font-size: 2.5rem;
+  color: rgb(255, 230, 0);
+  text-shadow: 3px 0 2px blue, -3px 0 2px blue, 0 3px 2px blue, 0 -3px 2px blue, 1px 1px blue, -2px -2px 2px blue, 2px -2px 2px blue, -2px 2px 2px blue, 0px 4px 4px rgba(0,0,0,0.93);
+}
+
+.homehome:hover {
+
+  animation-duration: .7s;
+  animation-name: jump_jump;
+  animation-direction: alternate;
+  animation-iteration-count: infinite
+}
+
+.homehome:focus {
+  text-shadow: rgba(0, 0, 0, .3) 2px 8px 4px -6px;
+}
+
+
+@keyframes jump_jump {
+  from {
+    text-shadow: 3px 0 2px blue, -3px 0 2px blue, 0 3px 2px blue, 0 -3px 2px blue, 1px 1px blue, -2px -2px 2px blue, 2px -2px 2px blue, -2px 2px 2px blue, 0px 4px 4px rgba(0,0,0,0.93);
+    transform: translate3d(0, 0, 0)
+  }
+
+  to {
+    text-shadow: 3px 0 2px blue, -3px 0 2px blue, 0 3px 2px blue, 0 -3px 2px blue, 1px 1px blue, -2px -2px 2px blue, 2px -2px 2px blue, -2px 2px 2px blue,  0px 10px 4px rgba(0,0,0,0.93);
+    transform: translate3d(0, -5px, 0);
+  }
+}
+
+
+/* 
+.home {
+  align-self: center;
+  background-color: #fff;
+  background-image: none;
+  background-position: 0 90%;
+  background-repeat: repeat no-repeat;
+  background-size: 4px 3px;
+  border-radius: 15px 225px 255px 15px 15px 255px 225px 15px;
+  border-style: solid;
+  border-width: 2px;
+  box-shadow: rgba(0, 0, 0, .2) 15px 28px 25px -18px;
+  box-sizing: border-box;
+  color: #41403e;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Neucha, sans-serif;
+  font-size: 1rem;
+  line-height: 23px;
+  outline: none;
+  padding: .75rem;
+  text-decoration: none;
+  transition: all 235ms ease-in-out;
+  border-bottom-left-radius: 15px 255px;
+  border-bottom-right-radius: 225px 15px;
+  border-top-left-radius: 255px 15px;
+  border-top-right-radius: 15px 225px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.home:hover {
+
+  animation-duration: 1s;
+  animation-name: jump;
+  animation-direction: alternate;
+  animation-iteration-count: infinite
+}
+
+.home:focus {
+  box-shadow: rgba(0, 0, 0, .3) 2px 8px 4px -6px;
+}
+
+
+@keyframes jump {
+  from {
+    box-shadow: rgba(0, 0, 0, .2) 15px 28px 25px -18px;
+    transform: translate3d(0, 0, 0)
+  }
+
+  to {
+    box-shadow: rgb(0, 0, 0) 2px 8px 8px -5px;
+    transform: translate3d(0, -5px, 0);
+  }
+} */
+

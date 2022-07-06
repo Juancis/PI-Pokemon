@@ -1,0 +1,60 @@
+.divNotFoundPage{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh; 
+     background-repeat: no-repeat;
+     background-size: cover;
+     background-position: center;
+
+}
+
+
+.centernfp{
+  display: flex;
+  justify-content: center;
+}
+
+.bottomnfp{
+  display: flex;
+  justify-content: space-between;
+  margin-left: 80px;
+  margin-right: 80px;
+  margin-bottom: 20px;
+
+}
+
+
+
+.letterNotFoundPage {
+    margin: 0;
+    font-family: 'Pokemon Solid', sans-serif;
+    font-size: 2.5rem;
+    color: rgb(255, 230, 0);
+    text-shadow: 3px 0 2px blue, -3px 0 2px blue, 0 3px 2px blue, 0 -3px 2px blue, 1px 1px blue, -2px -2px 2px blue, 2px -2px 2px blue, -2px 2px 2px blue, 0px 4px 4px rgba(0,0,0,0.93);
+  }
+  
+  .letterNotFoundPage:hover {
+  
+    animation-duration: .7s;
+    animation-name: jump_jump;
+    animation-direction: alternate;
+    animation-iteration-count: infinite
+  }
+  
+  .letterNotFoundPage:focus {
+    text-shadow: rgba(0, 0, 0, .3) 2px 8px 4px -6px;
+  }
+  
+  
+  @keyframes jump_jump {
+    from {
+      text-shadow: 3px 0 2px blue, -3px 0 2px blue, 0 3px 2px blue, 0 -3px 2px blue, 1px 1px blue, -2px -2px 2px blue, 2px -2px 2px blue, -2px 2px 2px blue, 0px 4px 4px rgba(0,0,0,0.93);
+      transform: translate3d(0, 0, 0)
+    }
+  
+    to {
+      text-shadow: 3px 0 2px blue, -3px 0 2px blue, 0 3px 2px blue, 0 -3px 2px blue, 1px 1px blue, -2px -2px 2px blue, 2px -2px 2px blue, -2px 2px 2px blue,  0px 10px 4px rgba(0,0,0,0.93);
+      transform: translate3d(0, -5px, 0);
+    }
+  }

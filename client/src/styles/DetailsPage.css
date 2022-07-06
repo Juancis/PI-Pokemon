@@ -1,0 +1,80 @@
+.divDetailsContains{
+    display: flex;
+    background-image: url('https://www.pixelstalk.net/wp-content/uploads/2016/07/Pokeball-Desktop-Backgrounds.png');
+    background-repeat: repeat;
+    min-height: 100vh;
+    width: 100%;
+    background-position: right;
+    background-size: 1920px;
+}
+
+.divDetails{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    width: 80%; 
+   
+}
+
+.titleDetails{
+    text-align: center;
+    margin: 0;
+    padding-top: 50px;
+    transform: translate(-35px, 15px);
+    font-family: 'Poppins', sans-serif;
+}
+
+
+.imageDetails{
+    transform: translate(0px, -25px);
+    width: 80%;
+    -webkit-filter: drop-shadow(20px 5px 0 rgba(0, 0, 0, 0.5));
+    filter: drop-shadow(25px -3px 1px rgba(0, 0, 0, 0.5));
+    
+}
+.imageDetailsPsyduck{
+    width: 75%;
+    height: 65%;
+}
+
+.titleDetailsPsyduck{
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 70px;
+    width: 100%;
+    font-family: 'Poppins', sans-serif;
+}
+
+.divDetailsPsyduck{
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.featuresDetails{
+margin-top: 450px;
+margin-left: 30vh;
+height: 390px;
+width: 35%;
+border-radius: 5px;
+filter: drop-shadow(25px 0px 3px rgba(0, 0, 0, 0.5));
+background-color: whitesmoke;
+text-align:center;
+padding-bottom: 25px;
+}
+
+.liDetail{
+    margin-bottom: 5px;
+    margin-left: 25px;
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: 4px;
+    text-align: center;
+    width: 85%;
+    background-color: rgb(192, 219, 228);
+}
+
+.typeDetail{
+    margin-top: 5px;
+    font-family: 'Poppins', sans-serif;
+}
