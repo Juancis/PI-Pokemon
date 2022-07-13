@@ -5,10 +5,11 @@ import {
   GET_POKEMON_BY_NAME,
   CLEAR_PAGE,
   GET_ALL_TYPES,
-  SET_LOADING
+  SET_LOADING,
+  DETAIL_ERROR
 
 } from "../actions/types";
-const URL = `http://localhost:3001/pokemons`
+const URL = `http://192.168.100.4:3001/pokemons`
 
 
 export const getAllPokemons = () => {
@@ -22,8 +23,14 @@ export const getAllPokemons = () => {
 export const getPokemonDetail = (id) => {
     return async function (dispatch){
         dispatch({type: SET_LOADING})
-        const {data} = await axios.get(`${URL}/${id}`);
-        return dispatch({type: GET_POKEMON_DETAIL, payload: data})
+        try{
+            const {data} = await axios.get(`${URL}/${id}`);
+            return dispatch({type: GET_POKEMON_DETAIL, payload: data})
+        }catch(e){
+            return dispatch({type: DETAIL_ERROR})
+
+        }
+
     }
 }
 
@@ -56,7 +63,7 @@ export const clearPage = () => {
 
 export const getAllTypes = () => { 
     return async function (dispatch){
-        const {data} = await axios.get('http://localhost:3001/types')
+        const {data} = await axios.get('http://192.168.100.4:3001/types')
         return dispatch({type: GET_ALL_TYPES, payload:data})
 
 

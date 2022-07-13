@@ -5,3 +5,4 @@ export const CREATE_POKEMON = 'CREATE_POKEMON'
 export const CLEAR_PAGE = 'CLEAR_PAGE'
 export const GET_ALL_TYPES = 'GET_ALL_TYPES'
 export const SET_LOADING = "SET_LOADING"
+export const DETAIL_ERROR = 'DETAIL_ERROR'

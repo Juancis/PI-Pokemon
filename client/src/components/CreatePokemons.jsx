@@ -10,6 +10,7 @@ const CreatePokemons = () => {
   const typesState = useSelector((state) => state.types);
   const [created, setCreated] = useState("");
   const [error, setError] = useState(false);
+  const [errorname, setErrorName] = useState('')
 
   let id = 0;
 
@@ -53,9 +54,10 @@ const CreatePokemons = () => {
         return alert('Has to be a valid image URL')
     }
     }
-    if(input.height > 200 || input.weight > 200 || input.hp > 200){
+    if(input.height >= 200 || input.weight >= 200 || input.hp >= 200){
       return alert('Life, Height and Weight must be less than 200')
     }
+ 
 
     setError(await dispatch(createPokemon(input)));
     if (error.error) {
@@ -114,10 +116,13 @@ const CreatePokemons = () => {
                     name="name"
                     type="text"
                     value={input.name}
-                    required
+                  
                     onChange={handleChange}
                   />
                 </label>
+                {
+                  input.name.length === 0 ? <p>Tienes que llenar este campo</p> : null
+                }
                 <br />
                 <label className="labelCreate">
                   Life:
@@ -217,7 +222,7 @@ const CreatePokemons = () => {
 
           <div className="formThree">
             <br />
-            <button className="buttonFormThree" type="submit">
+            <button className="buttonFormThree" disabled={input.name.length === 0} type="submit">
               Create Pokemon!
             </button>
             <div className={error.error ? "buttonError" : "buttonCreated"}>

@@ -1,7 +1,7 @@
 import React from "react";
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { clearPage, getPokemonDetail } from "../redux/actions";
 import "../styles/DetailsPage.css";
 import psyduck from '../image/psyduck.png'
@@ -9,7 +9,14 @@ import psyduck from '../image/psyduck.png'
 const DetailsPokemon = () => {
   const { id } = useParams();
   const dispatch = useDispatch();
+  const navigate = useNavigate()
   const { pokemonDetail: pokemon, loading } = useSelector((state) => state);
+
+  useEffect(()=> {
+    if(pokemon === 'error'){
+      navigate('/error')
+    }
+    }, [pokemon, navigate])
 
   useEffect(() => {
     dispatch(getPokemonDetail(id));

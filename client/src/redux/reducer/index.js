@@ -35,6 +35,11 @@ const rootReducer = (state = initialState, action) => {
             return{
                 ...state, loading: true
             }
+        case types.DETAIL_ERROR:
+            return{
+                ...state, pokemonDetail: 'error',
+                loading: false
+                }   
             default:
                 return {...state}
     }
