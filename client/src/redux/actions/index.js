@@ -9,7 +9,7 @@ import {
   DETAIL_ERROR
 
 } from "../actions/types";
-const URL = `http://192.168.100.4:3001/pokemons`
+const URL = process.env.REACT_APP_SERVER + '/pokemons'
 
 
 export const getAllPokemons = () => {
@@ -63,7 +63,7 @@ export const clearPage = () => {
 
 export const getAllTypes = () => { 
     return async function (dispatch){
-        const {data} = await axios.get('http://192.168.100.4:3001/types')
+        const {data} = await axios.get(process.env.REACT_APP_SERVER + '/types')
         return dispatch({type: GET_ALL_TYPES, payload:data})
 
 

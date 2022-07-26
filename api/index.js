@@ -21,10 +21,10 @@ const server = require('./src/app.js');
 const { conn } = require('./src/db.js');
 const axios = require("axios");
 const URLtypes = "https://pokeapi.co/api/v2/type";
-const {Type} = require("../api/src/db");
+const {Type} = require("./src/db");
 
 // Syncing all the models at once.
-conn.sync({ force: true }).then( async () => {   // CARGO LOS TYPES A LA BD
+conn.sync({ force: false }).then( async () => {   // CARGO LOS TYPES A LA BD
   const {data} = await axios.get(URLtypes)
   data.results ? Type.bulkCreate(data.results.map( t => {
     return {
@@ -35,7 +35,7 @@ conn.sync({ force: true }).then( async () => {   // CARGO LOS TYPES A LA BD
 
 
 
-  server.listen(3001, () => {
-    console.log('%s listening at 3001'); // eslint-disable-line no-console
+  server.listen(process.env.PORT, () => {
+    console.log('funciona...'); // eslint-disable-line no-console
   });
 });
