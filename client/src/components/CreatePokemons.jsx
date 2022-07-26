@@ -10,8 +10,6 @@ const CreatePokemons = () => {
   const typesState = useSelector((state) => state.types);
   const [created, setCreated] = useState("");
   const [error, setError] = useState(false);
-  const [errorname, setErrorName] = useState('')
-
   let id = 0;
 
   const [input, setInput] = useState({
@@ -120,9 +118,7 @@ const CreatePokemons = () => {
                     onChange={handleChange}
                   />
                 </label>
-                {
-                  input.name.length === 0 ? <p>Tienes que llenar este campo</p> : null
-                }
+
                 <br />
                 <label className="labelCreate">
                   Life:
