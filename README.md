@@ -4,6 +4,9 @@
 
 <img height="150" src="./pokemon.png" />
 
+Link del proyecto: 
+https://pokemon-app-juancis.herokuapp.com
+
 ## Objetivos del Proyecto
 
 - Construir una App utlizando React, Redux, Node y Sequelize.
