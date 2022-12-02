@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const services = require('../services/pokemons.js');
 const {
   getAllPokemonsApi,
   getPokemonId,
@@ -7,7 +8,7 @@ const {
   getPokemonAPI,
   findOrCreatePokemon,
   getAllPokemonsDB,
-} = require('../services/pokemons.js');
+} = services;
 
 const { Type, Pokemon } = require('../db');
 router.use(express.json());
