@@ -1,14 +1,13 @@
 const express = require('express');
 const router = express.Router();
-const services = require('../services/pokemons.js');
-const {
+import {
   getAllPokemonsApi,
   getPokemonId,
   getPokemonDB,
   getPokemonAPI,
   findOrCreatePokemon,
   getAllPokemonsDB,
-} = services;
+} from '../services/pokemons.js';
 
 const { Type, Pokemon } = require('../db');
 router.use(express.json());
