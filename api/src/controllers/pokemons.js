@@ -7,7 +7,7 @@ const {
   getPokemonAPI,
   findOrCreatePokemon,
   getAllPokemonsDB,
-} = require("../services/pokemons");
+} = require("../services/pokemons.js");
 
 const { Type, Pokemon } = require("../db");
 router.use(express.json());
@@ -58,14 +58,14 @@ router.post("/", async (req, res) => {
     // SE FIJA EN LA API SI EXISTE.-
     let pokeApi = await getPokemonAPI(name).catch((e) =>
       console.log(e.response.data)
-    ); 
+    );
     if (pokeApi) return res.json({ error: "The pokemon already exists" });
     const pokemon = await findOrCreatePokemon(req.body).catch((e) =>
       console.log(e)
     );
 
     // ASOCIA POKEMON CON LOS TYPES
-    if (types) { 
+    if (types) {
       const typeDB = await Type.findAll({
         where: { name: types },
       });
@@ -78,8 +78,6 @@ router.post("/", async (req, res) => {
     console.log(e);
     res.status(404).send({ error: "The pokemon already exists" });
   }
-
 });
-
 
 module.exports = router;
