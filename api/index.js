@@ -17,25 +17,30 @@
 //     =====`-.____`.___ \_____/___.-`___.-'=====
 //                       `=---='
 //     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-const server = require('./src/app.js');
-const { conn } = require('./src/db.js');
+const server = require("./src/app.js");
+const { conn } = require("./src/db.js");
 const axios = require("axios");
 const URLtypes = "https://pokeapi.co/api/v2/type";
-const {Type} = require("./src/db");
+const { Type } = require("./src/db");
 
 // Syncing all the models at once.
-conn.sync({ force: false }).then( async () => {   // CARGO LOS TYPES A LA BD
-  const {data} = await axios.get(URLtypes)
-  data.results ? Type.bulkCreate(data.results.map( t => {
-    return {
-      name: t.name
-    }
-  })) : console.log('Cant charge types')
-  console.log('Types successfully added in database...')
-
-
+conn.sync({ force: false }).then(async () => {
+  // CARGO LOS TYPES A LA BD
+  const { data } = await axios.get(URLtypes);
+  data.results
+    ? Type.bulkCreate(
+        data.results.map((t) => {
+          return {
+            name: t.name,
+          };
+        })
+      )
+    : console.log("Cant charge types");
+  console.log("Types successfully added in database...");
 
   server.listen(process.env.PORT, () => {
-    console.log('funciona...'); // eslint-disable-line no-console
+    console.log("funciona..."); // eslint-disable-line no-console
   });
 });
+
+module.exports = server;
