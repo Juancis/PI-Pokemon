@@ -22,7 +22,7 @@ const { conn } = require("./src/db.js");
 const axios = require("axios");
 const URLtypes = "https://pokeapi.co/api/v2/type";
 const { Type } = require("./src/db");
-
+const app = server;
 // Syncing all the models at once.
 conn.sync({ force: false }).then(async () => {
   // CARGO LOS TYPES A LA BD
@@ -38,9 +38,9 @@ conn.sync({ force: false }).then(async () => {
     : console.log("Cant charge types");
   console.log("Types successfully added in database...");
 
-  server.listen(process.env.PORT, () => {
-    console.log("funciona..."); // eslint-disable-line no-console
+  app.listen(process.env.PORT, () => {
+    console.log("Server listen..."); // eslint-disable-line no-console
   });
 });
 
-module.exports = server;
+module.exports = app;
