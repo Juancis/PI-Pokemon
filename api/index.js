@@ -26,9 +26,9 @@ const app = server;
 // Syncing all the models at once.
 conn.sync({ force: false }).then(async () => {
   // CARGO LOS TYPES A LA BD
-  const { data } = await axios.get(URLtypes);
   const types = Type.findAll();
-  if (types === null) {
+  if (types.length === 0) {
+    const { data } = await axios.get(URLtypes);
     data.results
       ? Type.bulkCreate(
           data.results.map((t) => {
