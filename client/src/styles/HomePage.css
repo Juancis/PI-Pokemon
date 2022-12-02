@@ -85,8 +85,7 @@
      width: 500px;
      background:
          linear-gradient(to bottom left, transparent 49.5%, #fff 50%) 0 50px/100% 100px,
-         linear-gradient(#fff, #fff) bottom/100% calc(100% - 150px),
-         url('https://images.wikidexcdn.net/mwuploads/wikidex/0/0a/latest/20141130014622/Profesor_Oak_%28XY%29.png') top/100% auto no-repeat;
+         linear-gradient(#fff, #fff) bottom/100% calc(100% - 150px), url('../image/Profesor_Oak.png') top/100% auto no-repeat;
      background-repeat: no-repeat;
  }
 
