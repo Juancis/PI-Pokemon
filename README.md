@@ -5,7 +5,7 @@
 <img height="150" src="./pokemon.png" />
 
 Link del proyecto: 
-https://pokemon-app-juancis.herokuapp.com
+https://pokemon-pi-six.vercel.app/
 
 ## Objetivos del Proyecto
 
