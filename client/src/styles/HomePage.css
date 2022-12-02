@@ -82,7 +82,7 @@
      transition: 0.2s;
      padding: 100px 10px 5px;
      margin: 15px 0 15px;
-     width: 200px;
+     width: 500px;
      background:
          linear-gradient(to bottom left, transparent 49.5%, #fff 50%) 0 50px/100% 100px,
          linear-gradient(#fff, #fff) bottom/100% calc(100% - 150px),
