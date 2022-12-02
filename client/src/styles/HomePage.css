@@ -1,263 +1,268 @@
- .divContainer{
-    background-image: url('https://cdn.wallpapersafari.com/34/85/xvDLHZ.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: bottom;
-    background-attachment: fixed;
-    min-height: 100vh;
-    
-}
+ .divContainer {
+     background-image: url('https://cdn.wallpapersafari.com/34/85/xvDLHZ.png');
+     background-repeat: no-repeat;
+     background-size: cover;
+     background-position: bottom;
+     background-attachment: fixed;
+     min-height: 100vh;
 
-.divFilter{
-    display:flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 55px 20px 55px 20px;
-    
-}
+ }
 
-.divSelectTypes{
-    display: flex;
-    font-family: 'Poppins', sans-serif;
-}
+ .divFilter {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     padding: 55px 20px 55px 20px;
 
+ }
 
-.filter{
-    display: flex;
-    flex-direction: column-reverse;
-    font-family: 'Poppins', sans-serif;
-}
-
-.selectFilter{
-    display: flex;
-    border-radius: 3px;
-    font-family: 'Poppins', sans-serif;
-    color: #60666d;
-    margin-right: 3px;
-    width: 125px;
-}
-.labelFilter{
-    display: flex;
-    flex-direction: column-reverse;
-    align-items: center;
-}
-
- .divOrder{
-    display: flex;
-    justify-content: center;
-    align-items: baseline;
-    font-family: 'Poppins', sans-serif;
-} 
-
-.selectOrder{
-    display: flex;
-    border-radius: 3px;
-    font-family: 'Poppins', sans-serif;
-    color: #60666d;
-    margin-right: 5px;
-}
-
-.divPokemons {
-        display: flex;
-        justify-content: space-around;
-        flex-wrap: wrap;
-
-}
+ .divSelectTypes {
+     display: flex;
+     font-family: 'Poppins', sans-serif;
+ }
 
 
-.divPokemonCard{
-    width: 25%;
-    display: flex;
-    justify-content: center;
+ .filter {
+     display: flex;
+     flex-direction: column-reverse;
+     font-family: 'Poppins', sans-serif;
+ }
 
-}
+ .selectFilter {
+     display: flex;
+     border-radius: 3px;
+     font-family: 'Poppins', sans-serif;
+     color: #60666d;
+     margin-right: 3px;
+     width: 125px;
+ }
 
-.pokemonCard{
-    display: flex;
-    justify-content: center;
-    border: 1px transparent #dadada;
-    border-radius: 4px;
-    box-shadow: 4px 4px 8px 0 rgba(0, 0, 0, 0.2);
-    transition: 0.2s;
-    padding:100px 10px 5px;
-    margin: 15px 0 15px;
-    width: 200px;
-    background:
-     linear-gradient(to bottom left,transparent 49.5%,#fff 50%) 0 50px/100% 100px,
-     linear-gradient(#fff,#fff) bottom/100% calc(100% - 150px),
-     url(https://images.wikidexcdn.net/mwuploads/wikidex/0/0a/latest/20141130014622/Profesor_Oak_%28XY%29.png) top/100% auto no-repeat;
-     background-repeat:no-repeat; 
-}
+ .labelFilter {
+     display: flex;
+     flex-direction: column-reverse;
+     align-items: center;
+ }
 
+ .divOrder {
+     display: flex;
+     justify-content: center;
+     align-items: baseline;
+     font-family: 'Poppins', sans-serif;
+ }
 
-.pokemonCard:hover{
-    box-shadow: 8px 8px 16px 0 rgba(0, 0, 0, 0.2);
-    cursor: pointer;
-}
- 
-.divPagination{
-    display: flex;
-    justify-content: center;
-    margin-top: 13vh;
-    padding-bottom: 10vh;
-}
+ .selectOrder {
+     display: flex;
+     border-radius: 3px;
+     font-family: 'Poppins', sans-serif;
+     color: #60666d;
+     margin-right: 5px;
+ }
 
-.pagination{
-        color: black;
-        padding: 8px 16px;
-        text-decoration: none;
-        background: rgba(255, 255, 255, 0.685);
-        font-size: 17px;
-        transition: .3s;
-        border: 1px solid #ddd;
-        border-radius: 10px;
-        margin: 0 3px;
-       
-}
+ .divPokemons {
+     display: flex;
+     justify-content: space-around;
+     flex-wrap: wrap;
 
-.pagination-active {
-    background: rgb(243 230 12);
-    border: none
-  }
-
-.pagination:hover{
-    cursor: pointer;
-    
-}
+ }
 
 
-.pagination:hover:not(.active){
-    background-color: rgb(104 189 86);
-    border-color: transparent;
-    border-radius: 3px;
-}
+ .divPokemonCard {
+     width: 25%;
+     display: flex;
+     justify-content: center;
 
-.divNavbar{
-    background-color: #1f1e1c71;
-    margin-top: 0;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    position: fixed;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;   
-    align-items: center;
-}
+ }
+
+ .pokemonCard {
+     display: flex;
+     justify-content: center;
+     border: 1px transparent #dadada;
+     border-radius: 4px;
+     box-shadow: 4px 4px 8px 0 rgba(0, 0, 0, 0.2);
+     transition: 0.2s;
+     padding: 100px 10px 5px;
+     margin: 15px 0 15px;
+     width: 200px;
+     background:
+         linear-gradient(to bottom left, transparent 49.5%, #fff 50%) 0 50px/100% 100px,
+         linear-gradient(#fff, #fff) bottom/100% calc(100% - 150px),
+         url('https://images.wikidexcdn.net/mwuploads/wikidex/0/0a/latest/20141130014622/Profesor_Oak_%28XY%29.png') top/100% auto no-repeat;
+     background-repeat: no-repeat;
+ }
 
 
+ .pokemonCard:hover {
+     box-shadow: 8px 8px 16px 0 rgba(0, 0, 0, 0.2);
+     cursor: pointer;
+ }
 
-.buttonNavBar{
-margin-left: 30px;
-}
+ .divPagination {
+     display: flex;
+     justify-content: center;
+     margin-top: 13vh;
+     padding-bottom: 10vh;
+ }
 
-.buttonNavBar:hover{
-cursor: pointer;
-}
+ .pagination {
+     color: black;
+     padding: 8px 16px;
+     text-decoration: none;
+     background: rgba(255, 255, 255, 0.685);
+     font-size: 17px;
+     transition: .3s;
+     border: 1px solid #ddd;
+     border-radius: 10px;
+     margin: 0 3px;
 
-.buttonNavBarActive{
-text-shadow: 2px 2px 5px white;
-}
+ }
 
-.textNavBar{
-    text-decoration: none;
-    color: black;
-    font-size: 22px;
-    font-family: 'Poppins', sans-serif;
-    font-weight:900;
-}
+ .pagination-active {
+     background: rgb(243 230 12);
+     border: none
+ }
 
-.textNavBar:hover{
-    text-transform: capitalize;
-    text-shadow: 2px 2px 5px white;
-}
+ .pagination:hover {
+     cursor: pointer;
+
+ }
+
+
+ .pagination:hover:not(.active) {
+     background-color: rgb(104 189 86);
+     border-color: transparent;
+     border-radius: 3px;
+ }
+
+ .divNavbar {
+     background-color: #1f1e1c71;
+     margin-top: 0;
+     padding-top: 10px;
+     padding-bottom: 10px;
+     position: fixed;
+     width: 100%;
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+ }
 
 
 
+ .buttonNavBar {
+     margin-left: 30px;
+ }
 
- .buttonSearchBar{
-    background-color: #f7efef;
-    margin-right: 30px;
-    height: 23px;
-    width: 70px;
-    cursor: pointer;
-    border-radius: 0px 10px 10px 0px;
-    border: none;
-    font-size: smaller;
-    font-family: 'Poppins', sans-serif;
-    margin-bottom: 1px;
-} 
-.buttonSearchBar:hover{
-    background-color:  rgb(243 230 12);
-    border-color: transparent;
-}
+ .buttonNavBar:hover {
+     cursor: pointer;
+ }
 
-.searchInput{
-    padding-left: 10px;
-    border-radius: 10px 0px 0px 10px;
-    border: none;
-    height: 3ex;
+ .buttonNavBarActive {
+     text-shadow: 2px 2px 5px white;
+ }
 
-}
-.searchInput:focus{
-    outline:none
-}
+ .textNavBar {
+     text-decoration: none;
+     color: black;
+     font-size: 22px;
+     font-family: 'Poppins', sans-serif;
+     font-weight: 900;
+ }
 
-.showAllButton{
-    border: none;
-    border-radius: 10px;
-    height: 25px;
-    font-family: 'Poppins', sans-serif;
-}
-.showAllButton:hover{
-    cursor: pointer;
-    background-color: var(--blue)
+ .textNavBar:hover {
+     text-transform: capitalize;
+     text-shadow: 2px 2px 5px white;
+ }
 
-}
 
-.typesAllPokemons{
-    border-radius: 100%;
-    height: 30px;
-    width: 30px;
-    display: flex;
-    justify-content: center; 
-    align-items: center
-}
-.typeFlex{
-    display:flex;
-    justify-content: space-around;
-    margin-top: 10px;
-    width: 100px;
-}
 
-.pokemonFlex{
-    text-decoration: none;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-}
 
-.nopokemons{
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    padding-top: 20px;
-    border: 1px solid black;
-    background-color: rgba(255, 255, 255, 0);
-    border-radius: 5px;
-    height: 50px;
-    width: 25%;
-    box-shadow: 10px 5px 5px black;
-    font-size: 22px;
-    font-family: 'Poppins', sans-serif;
-    font-weight:900;
-}
+ .buttonSearchBar {
+     background-color: #f7efef;
+     margin-right: 30px;
+     height: 23px;
+     width: 70px;
+     cursor: pointer;
+     border-radius: 0px 10px 10px 0px;
+     border: none;
+     font-size: smaller;
+     font-family: 'Poppins', sans-serif;
+     margin-bottom: 1px;
+ }
 
-.pokemonNotFound{
-    display: flex;
-    margin-right: 10px;
-}
-.pokemonNotFoundLetter{
-    font-family: 'Poppins', sans-serif;
-    color: rgb(226, 225, 225);
-}
+ .buttonSearchBar:hover {
+     background-color: rgb(243 230 12);
+     border-color: transparent;
+ }
+
+ .searchInput {
+     padding-left: 10px;
+     border-radius: 10px 0px 0px 10px;
+     border: none;
+     height: 3ex;
+
+ }
+
+ .searchInput:focus {
+     outline: none
+ }
+
+ .showAllButton {
+     border: none;
+     border-radius: 10px;
+     height: 25px;
+     font-family: 'Poppins', sans-serif;
+ }
+
+ .showAllButton:hover {
+     cursor: pointer;
+     background-color: var(--blue)
+ }
+
+ .typesAllPokemons {
+     border-radius: 100%;
+     height: 30px;
+     width: 30px;
+     display: flex;
+     justify-content: center;
+     align-items: center
+ }
+
+ .typeFlex {
+     display: flex;
+     justify-content: space-around;
+     margin-top: 10px;
+     width: 100px;
+ }
+
+ .pokemonFlex {
+     text-decoration: none;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: space-between;
+ }
+
+ .nopokemons {
+     display: flex;
+     justify-content: center;
+     align-content: center;
+     padding-top: 20px;
+     border: 1px solid black;
+     background-color: rgba(255, 255, 255, 0);
+     border-radius: 5px;
+     height: 50px;
+     width: 25%;
+     box-shadow: 10px 5px 5px black;
+     font-size: 22px;
+     font-family: 'Poppins', sans-serif;
+     font-weight: 900;
+ }
+
+ .pokemonNotFound {
+     display: flex;
+     margin-right: 10px;
+ }
+
+ .pokemonNotFoundLetter {
+     font-family: 'Poppins', sans-serif;
+     color: rgb(226, 225, 225);
+ }
