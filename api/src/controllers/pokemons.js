@@ -1,4 +1,4 @@
-const express = require("express");
+const express = require('express');
 const router = express.Router();
 const {
   getAllPokemonsApi,
@@ -7,25 +7,25 @@ const {
   getPokemonAPI,
   findOrCreatePokemon,
   getAllPokemonsDB,
-} = require("../services/pokemons.js");
+} = require('../services/pokemons.js');
 
-const { Type, Pokemon } = require("../db");
+const { Type, Pokemon } = require('../db');
 router.use(express.json());
 
-router.get("/:idPokemon", async (req, res) => {
+router.get('/:idPokemon', async (req, res) => {
   const { idPokemon } = req.params;
   try {
     const pokemon = await getPokemonId(idPokemon).catch(() => {});
     pokemon
       ? res.status(200).json(pokemon)
-      : res.status(404).json({ message: "Pokemon not found" });
+      : res.status(404).json({ message: 'Pokemon not found' });
   } catch (e) {
     console.log(e);
-    res.status(404).json({ message: "get/:idPokemon -> Error" });
+    res.status(404).json({ message: 'get/:idPokemon -> Error' });
   }
 });
 
-router.get("/", async (req, res) => {
+router.get('/', async (req, res) => {
   const queryPokemon = req.query.name?.toLowerCase();
 
   try {
@@ -37,7 +37,7 @@ router.get("/", async (req, res) => {
         const pokeApi = await getPokemonAPI(queryPokemon).catch(() => {});
         pokeApi
           ? res.status(200).json(pokeApi)
-          : res.status(404).json({ error: "The pokemon was not found" });
+          : res.status(404).json({ error: 'The pokemon was not found' });
       }
     } else {
       const pokemonsApi = await getAllPokemonsApi().catch(() => {});
@@ -48,18 +48,18 @@ router.get("/", async (req, res) => {
     }
   } catch (e) {
     console.log(e);
-    res.status(404).json({ error: "get/ -> Error" });
+    res.status(404).json({ error: 'get/ -> Error' });
   }
 });
 
-router.post("/", async (req, res) => {
+router.post('/', async (req, res) => {
   const { name, types } = req.body;
   try {
     // SE FIJA EN LA API SI EXISTE.-
     let pokeApi = await getPokemonAPI(name).catch((e) =>
       console.log(e.response.data)
     );
-    if (pokeApi) return res.json({ error: "The pokemon already exists" });
+    if (pokeApi) return res.json({ error: 'The pokemon already exists' });
     const pokemon = await findOrCreatePokemon(req.body).catch((e) =>
       console.log(e)
     );
@@ -76,7 +76,7 @@ router.post("/", async (req, res) => {
     // CONSULTA SI ESTA CREADO EN LA BD, SI NO LO ESTA, LO CREA Y LO DEVUELVE, SI NO, EL ERROR.
   } catch (e) {
     console.log(e);
-    res.status(404).send({ error: "The pokemon already exists" });
+    res.status(404).send({ error: 'The pokemon already exists' });
   }
 });
 
