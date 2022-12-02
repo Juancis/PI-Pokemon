@@ -27,6 +27,7 @@ const app = server;
 conn.sync({ force: false }).then(async () => {
   // CARGO LOS TYPES A LA BD
   const types = Type.findAll();
+  console.log(types);
   if (types.length === 0) {
     const { data } = await axios.get(URLtypes);
     data.results
