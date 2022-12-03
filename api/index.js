@@ -26,7 +26,9 @@ const app = server;
 // Syncing all the models at once.
 conn.sync({ force: false }).then(async () => {
   // CARGO LOS TYPES A LA BD
-  await Type.sync({ force: true });
+  await Type.destroy({
+    truncate: true,
+  });
 
   const { data } = await axios.get(URLtypes);
   data.results
