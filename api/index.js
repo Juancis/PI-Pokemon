@@ -27,6 +27,7 @@ const app = server;
 conn.sync({ force: false }).then(async () => {
   // CARGO LOS TYPES A LA BD
   await Type.deleteMany({});
+  console.log('Types deleted');
   const { data } = await axios.get(URLtypes);
   data.results
     ? Type.bulkCreate(
