@@ -54,6 +54,7 @@ router.get('/', async (req, res) => {
 
 router.post('/', async (req, res) => {
   const { name, types } = req.body;
+
   try {
     // SE FIJA EN LA API SI EXISTE.-
     let pokeApi = await getPokemonAPI(name).catch((e) =>

@@ -26,18 +26,12 @@ const app = server;
 // Syncing all the models at once.
 conn.sync({ force: false }).then(async () => {
   // CARGO LOS TYPES A LA BD
-  const { data } = await axios.get(URLtypes);
   const types = await Type.findAll();
+ 
+  
   if (types.length === 0) {
-    data.results
-      ? Type.bulkCreate(
-          data.results.map((t) => {
-            return {
-              name: t.name,
-            };
-          })
-        )
-      : console.log('Cant charge types');
+    const { data } = await axios.get(URLtypes);
+    data.results ? Type.bulkCreate(data.results.map(t =>  {return {name: t.name}})) : console.log('Cant charge types');
     console.log('Types successfully added in database...');
   }
   app.listen(process.env.PORT, () => {
