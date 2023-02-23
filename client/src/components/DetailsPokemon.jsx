@@ -24,7 +24,8 @@ const DetailsPokemon = () => {
     return () => {dispatch(clearPage())};
    
   }, [dispatch, id]);
-
+  if(!pokemon.types) return <Loading />
+  
   return (
     <>
       {loading ? <Loading /> : (
@@ -39,7 +40,7 @@ const DetailsPokemon = () => {
               📏Height <div className="liDetail"> {pokemon.height}</div>
               ⚖️Weight <div className="liDetail">{pokemon.weight}</div>
               Types: {" "}
-              <div className="typeDetail"> {pokemon.types?.join(", ").toUpperCase()}</div>
+              <div className="typeDetail"> {pokemon.types.slice(0, 2).join(", ").toUpperCase()}</div>
             </ul>
           </div>
 

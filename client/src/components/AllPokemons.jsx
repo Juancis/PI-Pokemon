@@ -26,7 +26,7 @@ export default function AllPokemons({ name, image, types, id, attack }) {
         </strong>
       </div>
       <div className="typeFlex">
-        {types.map((t) => (
+        {types.slice(0, 2).map((t) => (
           <div
             key={keyAlt++}          
             className="typesAllPokemons"
