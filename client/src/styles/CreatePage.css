@@ -1,35 +1,45 @@
 .divContainCreate{
-    display: flex;
-    justify-content: center;
-    align-items: center;
     background-image: url('https://wallpapercave.com/wp/wp1902696.png');
     background-repeat: no-repeat;
     background-size: cover;
     min-height: 100vh;
-    
+ 
 }
 
+.formBoxContainer{
+  margin: 0 auto;
+  position: relative;
+  width: 850px;
+  height: 600px;
+  padding-top: 100px;
+  
+}
+
+
 .divFormCreate{
-    display: flex;
-    background-image: url(https://wallpapercave.com/wp/wp2595093.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: bottom;
-    padding: 2% 0 7%;
-    border-radius: 15px;
-    width: 50%;
-    box-shadow: 10px 10px 5px rgb(0, 0, 0);
-    padding-bottom: 170px;
+  padding: 32px;
+  background-image: url(https://wallpapercave.com/wp/wp2595093.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom;
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  box-shadow: 10px 10px 5px rgb(0, 0, 0);
+  
 }
 
 .formCreate{
-width: 50%;
+width: 40%;
 }
 
 .formOne{
   display: flex;
   flex-direction: column;
-  align-content: center;
+  align-items: center;
   padding-top: 20px
 }
 
@@ -37,13 +47,9 @@ width: 50%;
 
 
 .formThree{
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items:flex-end;
-  width: 100%;
-  height: 80%;
-  margin-left: 75px;
+  position: absolute;
+  bottom: 0;
+  left: 43%;
 
 }
 
@@ -148,9 +154,9 @@ font-family: 'Poppins', sans-serif;
   border: 2px solid rgb(0, 0, 0);
   border-radius: 4px;
   height: 23px;
-  width: 130px;
-    
+  width: 165px;    
 }
+
 .inputCreate:focus{
     background-color: rgb(192, 219, 228);
 }
@@ -207,3 +213,55 @@ font-family: 'Poppins', sans-serif;
   font-family: 'Poppins', sans-serif;
 
 }
+@media screen and (max-width: 975px){
+  .formBoxContainer{
+    width: 350px;
+    height: 670px;
+    padding-top: 60px;
+
+    
+
+  }
+
+  .divFormCreate{
+    flex-direction: column;
+    gap: 12px;
+    padding: 8px;
+  }
+  .gridPokemonsTypes{
+    grid-gap: 0;
+  }
+
+  .formCreate{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .formCreateChild{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .formOne{
+    padding-top: 0;
+  }
+  .formOne br{
+    display: none;
+  }
+
+  .formThree{
+    position: absolute;
+    bottom: -30px;
+    left: 30%;
+  }
+
+}
+
+@media screen and (max-width: 400px){
+  .formBoxContainer{
+
+    margin: 0;
+  }
+
+  }

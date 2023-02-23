@@ -35,7 +35,7 @@ export default function SearchPokemon({ setFilterByType, setFiltersByCustom, fou
       ) : null}
 
 
-      <div style={{ display: "flex", alignItems: "center" }}>
+      <div className="navbar-search">
       <div className="pokemonNotFound">
           {found.error ? (
             <span className="pokemonNotFoundLetter">
@@ -43,7 +43,7 @@ export default function SearchPokemon({ setFilterByType, setFiltersByCustom, fou
             </span>
           ) : null}
         </div>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className="search-container">
           <label>
             <input
               className="searchInput"

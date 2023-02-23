@@ -13,6 +13,7 @@ import {
 } from '../utils';
 import NavBar from './NavBar';
 import '../styles/HomePage.css';
+import Loading from '../components/Loading';
 
 const HomePage = () => {
   const dispatch = useDispatch();
@@ -24,10 +25,11 @@ const HomePage = () => {
   const [found, notFound] = useState('');
   let id = 0;
 
+  
   const [array1, setArray1] = useState([]);
   const [array2, setArray2] = useState([]);
   const [array3, setArray3] = useState([]);
-
+  
   const [filtersByCustom, setFiltersByCustom] = useState({
     pokemons: 'all',
   });
@@ -37,58 +39,59 @@ const HomePage = () => {
   const [order, setOrder] = useState({
     ordenamiento: '',
   });
-
+  
   const handleRadioClick = (e) => {
     // CARGO MI OBJETO POKEMONS // SETEO PRIMER FILTRADO
     setFiltersByCustom({ pokemons: e.target.value });
     setActivePage(1);
   };
-
+  
   const handleChangeFilters = (e) => {
     // CARGO MI OBJETO TYPE // SETEO SEGUNDO FILTRADO
-
+    
     setFilterByType({ type: e.target.value });
     setActivePage(1);
   };
-
+  
   const handleChangeOrder = (e) => {
     // CARGO MI OBJETO ORDER // SETEO TERCER FILTRADO
     setOrder({ ordenamiento: e.target.value });
   };
-
+  
   useEffect(() => {
     // PRIMER FILTRADO BY CUSTOM
     setArray1(customFilter(pokemons, filtersByCustom));
     notFound('');
   }, [filtersByCustom, pokemons]);
-
+  
   useEffect(() => {
     // SEGUNDO FILTRADO BY TYPES
     notFound('');
     setArray2(typeFilter(array1, filterByType));
   }, [array1, filterByType]);
-
+  
   useEffect(() => {
     // TERCER FILTRADO BY ORDER
     setArray3([...orderFunction(array2, order)]);
   }, [array2, order]);
-
+  
   useEffect(() => {
     setPokemonsList(pageFunction(array3, activePage));
     setNumberPage(pageNumbers(array3.length));
   }, [array3, activePage]);
-
+  
   useEffect(() => {
     // CARGO ESTADO GLOBAL
     dispatch(getAllPokemons());
     dispatch(getAllTypes());
   }, [dispatch]);
-
+  
   useEffect(() => {
     // CARGO ESTADO LOCAL
     setTypesList(types);
   }, [types]);
-
+  
+  if(!pokemons) return <Loading />
   return (
     <div className="divContainer">
       <div className="divNavbar">
@@ -168,15 +171,7 @@ const HomePage = () => {
       </div>
 
       <div className="divPokemons">
-        {loading ? (
-          <div>
-            <img
-              src="https://i.gifer.com/4OKl.gif"
-              alt="loading"
-              style={{ display: 'flex', justifyContent: 'center' }}
-            />
-          </div>
-        ) : pokemonsList.length ? (
+        {loading ? <Loading /> : pokemonsList.length ? (
           pokemonsList.map((p) => (
             <div key={p.id} className="divPokemonCard">
               <div key={p.id} className="pokemonCard">

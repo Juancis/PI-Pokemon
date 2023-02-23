@@ -5,6 +5,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import { clearPage, getPokemonDetail } from "../redux/actions";
 import "../styles/DetailsPage.css";
 import psyduck from '../image/psyduck.png'
+import Loading from "./Loading";
 
 const DetailsPokemon = () => {
   const { id } = useParams();
@@ -24,25 +25,9 @@ const DetailsPokemon = () => {
    
   }, [dispatch, id]);
 
-
-
-  
-
   return (
     <>
-      {loading ? (
-        <div
-          style={{
-            width: "100vw",
-            height: "100vh",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-          }}
-        >
-          <img src="https://i.gifer.com/4OKl.gif" alt="mewloading" />
-        </div>
-      ) : (
+      {loading ? <Loading /> : (
         <>
           <div className="featuresDetails">
             <ul>
@@ -59,7 +44,7 @@ const DetailsPokemon = () => {
           </div>
 
           <div className="divDetails">
-            <div className={ isNaN(id) ? "divDetailsPsyduck" : null} >
+            <div className={ isNaN(id) ? "divDetailsPsyduck" : "divDetailsContainer"} >
               <h1 className={isNaN(id) ? "titleDetailsPsyduck" : "titleDetails"}>
                 {`${pokemon.name?.toUpperCase()} ${
                   isNaN(id) ? "#Custom" : 

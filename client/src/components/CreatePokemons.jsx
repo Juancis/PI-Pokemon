@@ -5,6 +5,7 @@ import "../styles/CreatePage.css";
 import icons, { getColor } from "../utils/icons";
 import { isUrl } from "../utils";
 
+
 const CreatePokemons = () => {
   const dispatch = useDispatch();
   const typesState = useSelector((state) => state.types);
@@ -23,7 +24,6 @@ const CreatePokemons = () => {
     types: [],
     image: '',
   });
-
 
   const handleChange = (e) => {
     setInput({ ...input, [e.target.name]: e.target.value });
@@ -47,6 +47,9 @@ const CreatePokemons = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    if (input.name === '') return alert("Name is required");
+
     if(input.image){
       if(!isUrl(input.image)){
         return alert('Has to be a valid image URL')
@@ -55,24 +58,9 @@ const CreatePokemons = () => {
     if(input.height >= 200 || input.weight >= 200 || input.hp >= 200){
       return alert('Life, Height and Weight must be less than 200')
     }
- 
+    
 
     setError(await dispatch(createPokemon(input)));
-    if (error.error) {
-      setInput({
-        name: "",
-        hp: "",
-        attack: "",
-        defense: "",
-        speed: "",
-        height: "",
-        weight: "",
-        types: [],
-        image: '',
-      });
-      return error.error;
-    }
-
     setCreated(input);
 
     setInput({
@@ -88,19 +76,20 @@ const CreatePokemons = () => {
     });
   };
 
+
   useEffect(() => {
     dispatch(getAllTypes());
   }, [dispatch]);
 
   return (
     <div className="divContainCreate">
+      <div className="formBoxContainer">
       <div className="divFormCreate">
         <form className="formCreate" onSubmit={handleSubmit}>
-          <div
+          <div className="formCreateChild"
             style={{
               display: "flex",
               width: "100%",
-              justifyContent: "space-around",
             }}
           >
             <div className="formOne">
@@ -114,7 +103,6 @@ const CreatePokemons = () => {
                     name="name"
                     type="text"
                     value={input.name}
-                  
                     onChange={handleChange}
                   />
                 </label>
@@ -218,7 +206,7 @@ const CreatePokemons = () => {
 
           <div className="formThree">
             <br />
-            <button className="buttonFormThree" disabled={input.name.length === 0} type="submit">
+            <button className="buttonFormThree" type="submit">
               Create Pokemon!
             </button>
             <div className={error.error ? "buttonError" : "buttonCreated"}>
@@ -267,10 +255,10 @@ const CreatePokemons = () => {
                 </div>
               ))}
             </div>
-
             <div></div>
           </label>
         </div>
+      </div>
       </div>
     </div>
   );

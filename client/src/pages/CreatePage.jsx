@@ -5,15 +5,11 @@ import "../styles/CreatePage.css"
 const CreatePage = () => {
 
     return(
-        <div >
+        <div style={{ minHeight: '100vh' }}>
             <div className="divNavbar">
             <NavBar/>
             </div>
-            <div>
-            <CreatePokemons/>
-            </div>
-        
-
+            <CreatePokemons/>       
         </div>
     )
 }

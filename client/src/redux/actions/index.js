@@ -44,7 +44,7 @@ export const getPokemonByName = (name) => {
 export const createPokemon = (data) => {
   return async function () {
     try {
-      return await axios.post(URL, data).catch();
+      return await axios.post(URL, data);
     } catch (e) {
       return e.response.data;
     }

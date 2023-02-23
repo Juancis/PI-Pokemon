@@ -3,8 +3,12 @@
      background-repeat: no-repeat;
      background-size: cover;
      background-position: bottom;
-     background-attachment: fixed;
+/*      background-attachment: fixed;
      min-height: 100vh;
+      */
+    min-height: 100vh;
+    max-width: 100%;
+    width: 100%;
 
  }
 
@@ -132,19 +136,40 @@
      border-radius: 3px;
  }
 
- .divNavbar {
-     background-color: #1f1e1c71;
-     margin-top: 0;
-     padding-top: 10px;
-     padding-bottom: 10px;
-     position: fixed;
-     width: 100%;
-     display: flex;
-     justify-content: space-between;
-     align-items: center;
- }
 
 
+/* 
+///////////////////////// 
+//////NAVBAR 
+///////////////////////// 
+*/
+
+.divNavbar {
+    background-color: #1f1e1c71;
+    margin-top: 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    position: fixed;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10;
+}
+
+.navbar-ul{
+    display:flex;
+    margin: 0;
+    padding: 0
+}
+
+
+.navbar-search{
+    display: flex;
+    align-items: center;
+
+
+}
 
  .buttonNavBar {
      margin-left: 30px;
@@ -243,13 +268,12 @@
  .nopokemons {
      display: flex;
      justify-content: center;
-     align-content: center;
-     padding-top: 20px;
+     align-items: center;
      border: 1px solid black;
      background-color: rgba(255, 255, 255, 0);
      border-radius: 5px;
      height: 50px;
-     width: 25%;
+     width: 550px;
      box-shadow: 10px 5px 5px black;
      font-size: 22px;
      font-family: 'Poppins', sans-serif;
@@ -265,3 +289,74 @@
      font-family: 'Poppins', sans-serif;
      color: rgb(226, 225, 225);
  }
+
+
+
+ @media screen and (max-width: 1440px){
+    .navbar-search{
+        width: 100%;
+        flex-direction: column-reverse
+    }
+    .search-container{
+        margin: 0 auto;
+    }
+
+    .navbar-container{
+        width: 100%;
+    } 
+
+    .searchInput{ 
+        margin-top: 5px;
+    }
+
+    .divNavbar{
+        flex-direction: column;
+    }
+
+    .navbar-ul{
+        display:flex;
+        flex-direction: row;
+        margin: 0 auto;
+        padding: 0;
+        justify-content: space-around;
+
+    }
+    .buttonSearchBar{
+        margin-right: 0;
+    }
+
+    .divFilter {
+        padding-top: 110px;
+    }
+}  
+
+@media screen and (max-width: 975px){
+    .divPokemonCard{
+        width: 30%;
+    }
+
+}
+
+@media screen and (max-width: 635px){
+    .divFilter {
+        flex-direction: column;
+        gap: 10px
+    }
+    .divOrder {
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+    .divPokemonCard{
+        width: 40%;
+    }
+    .nopokemons{
+        width: 80%;
+        font-size: 15px;
+        white-space: nowrap;
+        overflow: hidden;
+    }
+    .pokemonFlex img{
+        width: 100%;
+        height: 100%;
+    }
+}
